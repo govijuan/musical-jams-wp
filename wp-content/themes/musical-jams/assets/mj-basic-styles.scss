@@ -28,7 +28,10 @@
 
 .lp-record-wrap {
   height: 80vh;
-  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:before {
     background: url("../images/blue-lp.png");
     background-size: contain;
@@ -40,6 +43,15 @@
     background-repeat: no-repeat;
     background-position: center;
     animation: spin 1.7s linear infinite;
+  }
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+    position: absolute;
   }
 }
 
