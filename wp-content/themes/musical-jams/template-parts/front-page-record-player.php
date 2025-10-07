@@ -13,7 +13,9 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <div class="turntable-right-col"></div>
+                    <div class="turntable-right-col">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/slidertocadiscos.png" alt="Imagen botón deslizante para controlar el tocadiscos" />
+                    </div>
                 </div>
             </div>
 
