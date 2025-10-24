@@ -98,6 +98,15 @@
     width: auto;
     height: 40%;
   }
+  .slider-rail-wrap {
+    height: 40vh;
+    position: absolute;
+    top: 55%;
+    width: 89px;
+    right: 0;
+    background-image: url("../images/slidertocadiscos.png");
+    background-size: contain;
+  }
   &:after {
     content: "";
     display: block;
