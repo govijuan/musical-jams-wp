@@ -557,7 +557,7 @@ function musical_jams_scripts_loader() {
 	// 2. Scripts.
 	wp_enqueue_script('frontpagejs', get_theme_file_uri('build/frontpage.js'), array(), $theme_version, true, 0);
 	wp_enqueue_script( 'mainjs', get_theme_file_uri( 'build/main-js.js' ), array(), $theme_version, true);
-
+	wp_enqueue_script('indexjs', get_theme_file_uri('build/index.js'), array('wp-element'), $theme_version, true);
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -1,5 +1,6 @@
 const path = require("path"),
   removeEmptyScriptsPlugin = require("webpack-remove-empty-scripts"),
+  MiniCssExtractPlugin = require("mini-css-extract-plugin"),
   webpackConfig = require("@wordpress/scripts/config/webpack.config");
 
 // Extend the @wordpress webpack config and add the entry points.
@@ -26,12 +27,33 @@ module.exports = {
     entry: {
       "main-js": "./main.js",
       frontpage: "./frontpage.js",
+      index: "../src/index.js",
       main: "./main.scss",
     },
-    // jQuery support
-    /*externals: {
-			jquery: "jQuery",
-		},*/
+    output: {
+      path: path.resolve(__dirname, "build"),
+      filename: "[name].js",
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+          },
+        },
+        {
+          test: /\.scss$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        },
+      ],
+    },
+    externals: {
+      jquery: "jQuery",
+      react: "React",
+      "react-dom": "ReactDOM",
+    },
     plugins: [
       ...webpackConfig.plugins,
       /*new webpack.ProvidePlugin({
@@ -41,6 +63,9 @@ module.exports = {
 			}),*/
       new removeEmptyScriptsPlugin({
         stage: removeEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS,
+      }),
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
       }),
     ],
   },
