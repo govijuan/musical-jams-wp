@@ -1,5 +1,4 @@
 .brushed-metal {
-  margin-top: -1rem;
   color: hsla(0, 0%, 20%, 1);
   text-shadow:
     hsla(0, 0%, 40%, 0.5) 0 -1px 0,
@@ -10,6 +9,7 @@
   background-size: auto;
 
   transition: color 0.2s;
+  height: 100vh;
 }
 
 .record-player-table {
@@ -24,6 +24,16 @@
 
 .lbutton-wrapper {
   margin: 1em 0 0 0;
+  .lbutton {
+    border: none;
+    background: none;
+    .lbutton-icon {
+      display: block;
+      width: 70px;
+      height: 70px;
+      background: url("../images/botonon.png");
+    }
+  }
 }
 
 .lp-record-wrap {
