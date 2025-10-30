@@ -1,5 +1,6 @@
 import BrushedMetalContainer from "../atoms/brushedMetalContainer";
 import LeftRecordSide from "./leftRecordPlayerSide";
+import CenterRecordPlayerPart from "./centerRecordPlayerPart";
 
 const RecordPlayer = () => {
   return (
@@ -7,12 +8,13 @@ const RecordPlayer = () => {
       <BrushedMetalContainer>
         <div className="container-fluid">
           <div class="row">
-            Record Player here
             <LeftRecordSide
               handleOn={() => {
                 console.log("Click on Button On");
               }}
             />
+            <CenterRecordPlayerPart />
+            <div className="col-md-1"></div>
           </div>
         </div>
       </BrushedMetalContainer>
