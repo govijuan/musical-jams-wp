@@ -1,4 +1,5 @@
 import MujerMusicalJams from "../../../images/MusicalJamsMujer-min.png";
+import PlayerSlider from "../atoms/playerSlider";
 
 const CenterRecordPlayerPart = () => {
   return (
@@ -11,7 +12,8 @@ const CenterRecordPlayerPart = () => {
         </div>
         <div className="col-md-2">
           <div className="turntable-right-col">
-            <div className="slider-rail-wrap"></div>
+            {/*<div className="slider-rail-wrap"></div>*/}
+            <PlayerSlider />
           </div>
         </div>
       </div>

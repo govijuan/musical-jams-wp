@@ -56,11 +56,11 @@
   }
   & > img {
     width: 100%;
+    max-width: 754px;
     height: fit-content;
     object-fit: cover;
     object-position: center;
     top: 0;
-    left: 0;
     position: absolute;
   }
 }
@@ -116,18 +116,5 @@
     right: 0;
     background-image: url("../images/slidertocadiscos.png");
     background-size: contain;
-  }
-  &:after {
-    content: "";
-    display: block;
-    position: relative;
-    background: url("../images/BotonSlider.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 50%;
-    width: 89px;
-    position: absolute;
-    right: 0;
-    height: 40vh;
   }
 }
